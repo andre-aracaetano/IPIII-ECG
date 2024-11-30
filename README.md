@@ -16,6 +16,10 @@ Apesar da eletrônica ser uma parte fundamental desse projeto o código final te
 
 Além disso, uma grande dificuldade foi encontrar tutoriais sobre a utilização conjunta dos sensores, visto que os membros do projeto não tinham tanto conhecimento a cerca dessa área. Visando melhorar a experiência para outros programadores que queiram utilizar a microeletrônica, mas que não desejam se tornar profissionais ou querem algo rápido, do diretório `SKETCHS` você poderá encontrar uma série de arquivos `.ino` que coordenam cada sensor individual com a ESP32 além de todas as versões do código final. A criação desse diretório se dá ao fato de outro motivo de atraso do projeto é a falha eletrônica recorrente que esses dispositivos, muitas vezes sensíveis, apresentam em suas conexões o que acaba "corrompendo" o código. Um grande exemplo é a utilização do módulo `Display OLED 128x32` que, quando suas conexões dão erro durante o uso do dispositivo, apresenta um erro sobre a conexão do tipo I2C que mesmo sendo consertada o dispositivo não volta a funcionar. Uma solução para isso é compilar o código individual do módulo com a ESP32 para reativar sua utilização e por fim compilar o seu código de interesse para retornar a normalidade. Erros semelhantes ocorrem com o módulo `microSD`, por conta disso optamos por criar essa pasta e facilitar a disponibilidade de códigos "base" para cada módulo.
 
+Versão final do protótipo do dispositivo:
+
+![Texto alternativo](ELETRONICA/Foto_dispositivo_real.jpeg)
+
 # CODIGO JUPYTERBOOK - APLICATIVO
 
 Por conta do tempo gasto na programação do dispositivo o tempo investido no desenvolvimento do aplicativo, que em seu início seria um aplicativo de celular, foi bastante curto sendo possível apenas o desenvolvimento das suas funcionalidades via plataforma Jupyter Lab, em um jupyter notebook. Apesar de não possuir interface gráfica cumpre sua função proposta de:
