@@ -5,7 +5,7 @@
 **Programadores:** André de Araújo Caetano & Anna Karen de Oliveira Pinto
 
 **Objetivo**: O código foi desenvolvido durante o período da disciplina "IPIII - Iniciação à Pesquisa III". O principal objetivo é o desenvolvimento de um dispositivo baseado em Arduino capaz de coletar, armazenar e enviar dados gerados por um sensor de eletrocardiograma (ECG). Além disso, desenvolver um aplicativo capaz de receber via Bluetooth esses dados e realizar a análise desses dados. Por isso, o presente repositório pode ser resumido em dois códigos principais:
-- `CODIGO_ESP32.ino`: Este é o resultado final do código do dispositivo com todos os sensores, controlado por uma ESP32.
+- `CODIGO_ESP32.ino`: Este é o resultado final do código do dispositivo com todos os sensores, controlado por uma ESP32;
 - `aplicativo.ipynb`: Este é o "aplicativo" que não teve a interface gráfica desenvolvida, mas que contém o recebimento dos dados via Bluetooth e o processamento deles.
 
 # CÓDIGO ESP32 - ELETRÔNICA
@@ -14,46 +14,46 @@ O código final utilizado no dispositivo ESP32 está contido no caminho `ELETRON
 
 Apesar da eletrônica ser uma parte fundamental desse projeto, o código final tem cerca de 308 linhas e seria extremamente extensivo discorrer durante o `README`. Por isso, o principal do código a ser observado são as variáveis em que é conectado cada sensor, justamente por ter sido um dos grandes motivos pelo atraso do projeto. 
 
-Além disso, uma grande dificuldade foi encontrar tutoriais sobre a utilização conjunta dos sensores, visto que os membros do projeto não tinham tanto conhecimento acerca dessa área. Visando melhorar a experiência para outros programadores que queiram utilizar a microeletrônica, mas que não desejam se tornar profissionais ou querem algo mais facilitado, no diretório `SKETCHS` você poderá encontrar uma série de arquivos `.ino` que coordenam cada sensor individual com a ESP32, além de todas as versões do código final. A criação desse diretório se dá ao fato de outro motivo de atraso do projeto é a falha eletrônica recorrente que esses dispositivos, muitas vezes sensíveis, apresentam em suas conexões o que acaba "corrompendo" o código. Um grande exemplo é a utilização do módulo `Display OLED 128x32` que, quando suas conexões dão erro durante o uso do dispositivo, apresenta um erro sobre a conexão do tipo I2C que mesmo sendo consertada o dispositivo não volta a funcionar. Uma solução para isso é compilar o código individual do módulo com a ESP32 para reativar sua utilização e por fim compilar o seu código de interesse para retornar a normalidade. Erros semelhantes ocorrem com o módulo `microSD`, por conta disso optamos por criar essa pasta e facilitar a disponibilidade de códigos "base" para cada módulo.
+Além disso, uma grande dificuldade foi encontrar tutoriais sobre a utilização conjunta dos sensores, visto que os membros do projeto não tinham tanto conhecimento acerca dessa área. Visando melhorar a experiência para outros programadores que queiram utilizar a microeletrônica, mas que não desejam se tornar profissionais ou querem algo mais facilitado, no diretório `SKETCHS` você poderá encontrar uma série de arquivos `.ino` que coordenam cada sensor individual com a ESP32, além de todas as versões do código final. A criação desse diretório se dá por outro motivo de atraso desse projeto: a recorrente falha eletrônica que esses dispositivos (muitas vezes sensíveis) apresentam em suas conexões, o que acaba "corrompendo" o código. Um grande exemplo foi a utilização do módulo `Display OLED 128x32` que, quando suas conexões deram errado durante o uso do dispositivo, foi apresentado um erro sobre a conexão do tipo I2C que, mesmo sendo consertada, o dispositivo não voltava a funcionar. Uma solução para isso foi compilar o código individual do módulo com a ESP32 para reativar sua utilização e, por fim, compilar o seu código de interesse para retornar a normalidade. Erros semelhantes ocorreram com o módulo `microSD`; por conta disso, optamos por criar essa pasta e facilitar a disponibilidade de códigos "base" para cada módulo.
 
 Versão final do protótipo do dispositivo:
 
 ![Texto alternativo](ELETRONICA/Foto_dispositivo_real.jpeg)
 
-# CODIGO JUPYTERBOOK - APLICATIVO
+# CÓDIGO JUPYTERBOOK - APLICATIVO
 
-Por conta do tempo gasto na programação do dispositivo o tempo investido no desenvolvimento do aplicativo, que em seu início seria um aplicativo de celular, foi bastante curto sendo possível apenas o desenvolvimento das suas funcionalidades via plataforma Jupyter Lab, em um jupyter notebook. Apesar de não possuir interface gráfica cumpre sua função proposta de:
-- Estabelecer conexão Bluetooth com o dispositivo para descarga dos arquivos
-- Realizar a análise dos dados de ECG
+Por conta do tempo gasto na programação do dispositivo, o tempo investido no desenvolvimento do aplicativo (que em seu início seria um aplicativo de celular) foi bastante curto, sendo possível apenas o desenvolvimento das suas funcionalidades via plataforma Jupyter Lab, em um jupyter notebook. Apesar de não possuir interface gráfica, cumpre sua função proposta de:
+- Estabelecer conexão Bluetooth com o dispositivo para descarga dos arquivos;
+- Realizar a análise dos dados de ECG.
 
-O aplicativo está intitulado de `aplicativo.ipynb` e esta dentro da pasta `/APLICATIVO`, essa pasta também consta o arquivo `requirements.txt` que contêm todas as biblitecas utilizadas e suas versões. É extremamente recomendável criar um ambiente conda próprio para utilizaçã desse código. A principal bibliteca do código é a [NeuroKit2](https://github.com/neuropsychology/NeuroKit) que irá receber os arquivos de ECG e realizar seu processamento de forma mais fácil. O código pode ser dividido na mesma divisão das funções estabelecidas anteriormente. Também disponibilizamos dados de teste que foram obtidos por nosso equipamento para aqueles que, muito possívelmente não terão a mesma eletrônica. 
+O aplicativo está intitulado de `aplicativo.ipynb` e está dentro da pasta `/APLICATIVO`. Essa pasta também consta o arquivo `requirements.txt`, que contêm todas as bibliotecas utilizadas e suas versões. É extremamente recomendável criar um ambiente conda próprio para utilização desse código. A principal bibliteca do código é a [NeuroKit2](https://github.com/neuropsychology/NeuroKit), que irá receber os arquivos do ECG e realizar seu processamento de forma mais fácil. O código pode ser dividido na mesma divisão das funções estabelecidas anteriormente. Também disponibilizamos dados de teste que foram obtidos por nosso equipamento para aqueles que, muito possívelmente, não terão a mesma eletrônica. 
 
 Dado isso, o fluxograma de utilização do código por um usuário seria:
 
-## 1. Inicializar o ambiente e as bibliotecas;
+## 1. Inicializar o ambiente e as bibliotecas
 
 ![image](https://github.com/user-attachments/assets/d4853f87-3b3a-4867-926f-0d778da56523)
 
-## 2. Criação das pastas do `paciente` que guardarão os arquivos e um arquivo concatenado de todos os outros para uma análise de longa duração;
-No caso a pasta para os dados de teste contêm o nome do paciente `Paciente_teste`.
+## 2. Criação das pastas do `paciente` que guardarão os arquivos e um arquivo concatenado de todos os outros para uma análise de longa duração
+No caso, a pasta para os dados de teste contêm o nome do paciente `Paciente_teste`.
 
 ![image](https://github.com/user-attachments/assets/1be87248-13ff-4ec6-b145-1ef54b7f2c2d)
 
-### 2.1 No caso de se possuir o dispositivo, ligar a conexão do dispositivo, parear com o computador e rodar a linha de código referente a essa ação;
+### 2.1 No caso de se possuir o dispositivo: ligar a conexão do dispositivo, parear com o computador e rodar a linha de código referente a essa ação
 
-Caso a conexão tenha se estabelecido de forma correta a seguinte mensagem poderá ser observada no output da celula:
+Caso a conexão tenha se estabelecido de forma correta, a seguinte mensagem poderá ser observada no output da célula:
 
 ![image](https://github.com/user-attachments/assets/cf3d4331-8580-407e-a722-9308c161dd7c)
 
-Além disso, no dispositivo o simbolo de Bluetooth irá aparecer estático.
+Além disso, no dispositivo irá aparecer o símbolo de Bluetooth estático.
 
-## 3. Análises disponíveis:
+## 3. Análises disponíveis
 
-Após concluir a etapa de criação da pasta do paciente, a pasta `Concatenados`, a pasta `Dados` e a pasta `Gráficos` e ter carregado com os dados, para os que tem o dispositivo, podemos iniciar as análises.
+Após concluir a etapa de criação das pastas do paciente (pasta `Concatenados`, `Dados` e `Gráficos`), pode-se iniciar as análises dos dados carregados para os que tem o dispositivo.
 
 ### 3.1 Determinação da frequência cardíaca
 
-Para utilizar os dados de teste atribua o valor `"Paciente_teste"` à variável `nome_do_paciente`, caso tenha criado seu paciente utilize o mesmo nome da pasta criada na etapa `2`. Após isso, rode a celula. O output para os dados de teste deverão ser:
+Para utilizar os dados de teste, atribua o valor `"Paciente_teste"` à variável `nome_do_paciente`, caso tenha criado seu paciente utilize o mesmo nome da pasta criada na etapa `2`. Após isso, rode a celula. O output para os dados de teste deverão ser:
 
 ![image](https://github.com/user-attachments/assets/c0885630-2886-452f-ab8f-dcdf8d52b20e)
 
