@@ -30,14 +30,87 @@ O aplicativo está intitulado de `aplicativo.ipynb` e esta dentro da pasta `/APL
 
 Dado isso, o fluxograma de utilização do código por um usuário seria:
 
-### Inicializar o ambiente e as bibliotecas;
+## 1. Inicializar o ambiente e as bibliotecas;
 
 ![image](https://github.com/user-attachments/assets/d4853f87-3b3a-4867-926f-0d778da56523)
 
-### Criação das pastas do `paciente` que guardarão os arquivos e um arquivo concatenado de todos os outros para uma análise de longa duração;
+## 2. Criação das pastas do `paciente` que guardarão os arquivos e um arquivo concatenado de todos os outros para uma análise de longa duração;
+No caso a pasta para os dados de teste contêm o nome do paciente `Paciente_teste`.
 
 ![image](https://github.com/user-attachments/assets/1be87248-13ff-4ec6-b145-1ef54b7f2c2d)
-5. No caso dos que possuem o dispositivo, ligar a conexão do dispositivo, parear com o computador e rodar a linha de código referente a essa ação;
+
+### 2.1 No caso de se possuir o dispositivo, ligar a conexão do dispositivo, parear com o computador e rodar a linha de código referente a essa ação;
+
+Caso a conexão tenha se estabelecido de forma correta a seguinte mensagem poderá ser observada no output da celula:
+
+![image](https://github.com/user-attachments/assets/cf3d4331-8580-407e-a722-9308c161dd7c)
+
+Além disso, no dispositivo o simbolo de Bluetooth irá aparecer estático.
+
+## 3. Análises disponíveis:
+
+Após concluir a etapa de criação da pasta do paciente, a pasta `Concatenados`, a pasta `Dados` e a pasta `Gráficos` e ter carregado com os dados, para os que tem o dispositivo, podemos iniciar as análises.
+
+### 3.1 Determinação da frequência cardíaca
+
+Para utilizar os dados de teste atribua o valor `"Paciente_teste"` à variável `nome_do_paciente`, caso tenha criado seu paciente utilize o mesmo nome da pasta criada na etapa `2`. Após isso, rode a celula. O output para os dados de teste deverão ser:
+
+![image](https://github.com/user-attachments/assets/c0885630-2886-452f-ab8f-dcdf8d52b20e)
+
+### 3.2 Perfil da Frequência Cardíaca
+
+Com a frequência cardiaca definida podemos partir para o `Perfil médio do padrão ECG` que determina como os dados estão se comportando. Caso seus dados tenham sido bons ou esteja utilizando os dados de teste o gráfico será algo semelhante ao seguinte:
+
+![image](https://github.com/user-attachments/assets/792568ea-14c2-4ce6-a071-e2203e44a4ce)
+
+Após isso, o código irá salvar esse código na pasta `/Gráficos` do paciente estabelecido da etapa `3.1`.
+
+### 3.3 Identificação dos picos (PQST)
+
+Além do pico R o ECG conta com outros picos que trazem outras informações dependendo da forma como o dado foi coletado. Para isso recomenda-se a seguinte [leitura](https://pt.my-ekg.com/generalidades-ecg/intervalos-segmentos-ecg.html). A função **NeuroKit2** também já conta com essa funcionalidade, para isso o output será algo semelhante a:
+
+![image](https://github.com/user-attachments/assets/cdc92a10-aea1-43b7-9505-320ca773909b)
+
+### 3.4 Segmentação temporal dos dados
+
+Esse tipo de análise é útil para se analisar todo o período de coleta dos dados. O código dessa celula contém a variável `segment_duration` que determina o `range` de corte dos dados carregados. Essa variável é importante pois, o dado de teste utilizado é de 1 minuto de leitura, mas a leitura pode ser de horas ou até dias, logo a mudança dessa variável vai depender do contexto de cada aplicação.
+
+![image](https://github.com/user-attachments/assets/991bbf13-5b17-4d93-8760-fd9ee7e8ad7b)
+![image](https://github.com/user-attachments/assets/f96907f7-2b9b-4927-8d51-fd12cb3155b3)
+![image](https://github.com/user-attachments/assets/a81553c9-26e4-4f03-a9ef-b953570c0d4f)
+![image](https://github.com/user-attachments/assets/5970a341-6b32-4d5b-99b9-d59170671668)
+![image](https://github.com/user-attachments/assets/2bd8fc71-23d8-4f9b-b625-27c51f4a1820)
+![image](https://github.com/user-attachments/assets/e0ec1137-01f0-42ee-bca1-85b2eebe3807)
+
+### 3.5 Identificação dos picos R
+
+Essa função já foi utilizada na etapa `3.1` mas nessa parte do código podemos plotar todo o dado coletado (60 segundos) e identificar se os picos R estão seguindo um padrão tanto de distância quanto de intensidade.
+
+![image](https://github.com/user-attachments/assets/0072411e-7d73-4065-a8f6-1481c05cab36)
+
+### 3.6 Detecção de anomalias
+
+A **detecção de anomalias nos intervalos RR** é realizada para identificar possíveis arritmias cardíacas. Arritmias são alterações nos intervalos entre batimentos cardíacos. No entanto, **É FORTEMENTE RECOMENDÁVEL NÃO SE UTILIZAR DESSA FUNÇÃO COMO COMPROVAÇÃO MÉDICA DE POSSÍVEIS DOENÇAS** essa função é apenas para efeito de finalização do pacote de futuras funções do aplicativo. Além disso, podemos obter a porcentagem de anomalias do total de picos R e comparar com os gráficos gerados nas funções anteriores para identificar se essas anomalias são erros na obtenção dos dados.
+
+![image](https://github.com/user-attachments/assets/f278ba93-ef9d-46b9-8282-cd30ac99aa3c)
+
+# Termo de Uso de IA Generativa
+
+Durante todo período do projeto se fez uso da IA conhecida como [CHATGPT](https://chatgpt.com) para aperfeicoamento e correções de erros do código.
+
+# Agradecimentos
+
+Agradecemos ao Centro Nacional de Pesquisa em Energia e Materiais e a Ilum Escola de Ciência pelo financeamento e tempo fornecido para o desenvolvimento desse projeto. Além disso, a todos os professores da Ilum por acreditarem em seus alunos e sempre inspira-los a irem mais longe a cada dia.
+
+"Eu trabalho com o que eu gosto, pude voltar a ser um herói. Eu estou vivendo o meu sonho, não tem nada melhor do que isso" - Izuku Midoriya da obra My Hero Academia de Kohei Horikoshi
+
+
+
+
+
+
+
+
 
 
 
