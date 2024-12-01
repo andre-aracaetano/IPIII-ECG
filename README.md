@@ -30,11 +30,16 @@ O aplicativo está intitulado de `aplicativo.ipynb` e esta dentro da pasta `/APL
 
 Dado isso, o fluxograma de utilização do código por um usuário seria:
 
-1. Inicializar o ambiente e as bibliotecas;
-2. Criação das pastas do `paciente` que guardarão os arquivos e um arquivo concatenado de todos os outros para uma análise de longa duração;
-3. No caso dos que possuem o dispositivo, ligar a conexão do dispositivo, parear com o computador e rodar a linha de código referente a essa ação;
+### Inicializar o ambiente e as bibliotecas;
 
 ![image](https://github.com/user-attachments/assets/d4853f87-3b3a-4867-926f-0d778da56523)
 
+### Criação das pastas do `paciente` que guardarão os arquivos e um arquivo concatenado de todos os outros para uma análise de longa duração;
+
 ![image](https://github.com/user-attachments/assets/1be87248-13ff-4ec6-b145-1ef54b7f2c2d)
+5. No caso dos que possuem o dispositivo, ligar a conexão do dispositivo, parear com o computador e rodar a linha de código referente a essa ação;
+
+
+
+
 
