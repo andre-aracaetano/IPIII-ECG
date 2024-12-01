@@ -26,7 +26,15 @@ Por conta do tempo gasto na programação do dispositivo o tempo investido no de
 - Estabelecer conexão Bluetooth com o dispositivo para descarga dos arquivos
 - Realizar a análise dos dados de ECG
 
-A principal bibliteca do código é a [NeuroKit2](https://github.com/neuropsychology/NeuroKit)
+O aplicativo está intitulado de `aplicativo.ipynb` e esta dentro da pasta `/APLICATIVO`, essa pasta também consta o arquivo `requirements.txt` que contêm todas as biblitecas utilizadas e suas versões. É extremamente recomendável criar um ambiente conda próprio para utilizaçã desse código. A principal bibliteca do código é a [NeuroKit2](https://github.com/neuropsychology/NeuroKit) que irá receber os arquivos de ECG e realizar seu processamento de forma mais fácil. O código pode ser dividido na mesma divisão das funções estabelecidas anteriormente. Também disponibilizamos dados de teste que foram obtidos por nosso equipamento para aqueles que, muito possívelmente não terão a mesma eletrônica. 
 
+Dado isso, o fluxograma de utilização do código por um usuário seria:
 
+1. Inicializar o ambiente e as bibliotecas;
+2. Criação das pastas do `paciente` que guardarão os arquivos e um arquivo concatenado de todos os outros para uma análise de longa duração;
+3. No caso dos que possuem o dispositivo, ligar a conexão do dispositivo, parear com o computador e rodar a linha de código referente a essa ação;
+
+![image](https://github.com/user-attachments/assets/d4853f87-3b3a-4867-926f-0d778da56523)
+
+![image](https://github.com/user-attachments/assets/1be87248-13ff-4ec6-b145-1ef54b7f2c2d)
 
