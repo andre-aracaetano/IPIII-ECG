@@ -53,7 +53,7 @@ Após concluir a etapa de criação das pastas do paciente (pasta `Concatenados`
 
 ### 3.1 Determinação da Frequência Cardíaca
 
-Para utilizar os dados de teste, atribua o valor `"Paciente_teste"` à variável `nome_do_paciente`. Caso já tenha criado uma pasta do seu paciente, utilize o mesmo nome da pasta criada na etapa `2`. Após isso, rode a célula. O output para os dados de teste deverão ser:
+Para utilizar os dados de teste, atribua o valor `"Paciente_teste"` à variável `nome_do_paciente`. Caso já tenha criado uma pasta do seu paciente, utilize o mesmo nome da pasta criada na etapa `2`. Altere também o numero da variável `num_min` que irá ditar qual minuto dos dados lidos você deseja obter analisar. Após isso, rode a célula. O output para os dados de teste deverão ser:
 
 ![image](https://github.com/user-attachments/assets/c0885630-2886-452f-ab8f-dcdf8d52b20e)
 
@@ -96,13 +96,14 @@ A **detecção de anomalias nos intervalos RR** é realizada para identificar po
 
 # Termo de Uso de IA Generativa
 
-Durante todo período do projeto se fez uso da IA conhecida como [CHATGPT](https://chatgpt.com) para aperfeiçoamento e correções necessárias do código.
+Durante todo período do projeto se fez uso da IA conhecida como [ChatGPT](https://chatgpt.com) para aperfeiçoamento e correções necessárias do código.
 
 # Agradecimentos
 
 Agradecemos ao CNPEM - Centro Nacional de Pesquisa em Energia e Materiais e a Ilum - Escola de Ciência pelo financiamento e tempo fornecido para o desenvolvimento desse projeto. Além disso, a todos os professores da Ilum por acreditarem em seus alunos e sempre inspirá-los a irem mais longe a cada dia.
 
-"Eu trabalho com o que eu gosto, pude voltar a ser um herói. Eu estou vivendo o meu sonho, não tem nada melhor do que isso" - Izuku Midoriya da obra My Hero Academia de Kohei Horikoshi
+"Eu trabalho com o que eu gosto, pude voltar a ser um herói. Eu estou vivendo o meu sonho, não tem nada melhor do que isso" 
+- Izuku Midoriya da obra My Hero Academia de Kohei Horikoshi
 
 
 
